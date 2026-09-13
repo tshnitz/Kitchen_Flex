@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kitchen Flex — A Flexbox Cooking Game</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-emoji" aria-hidden="true">🍳</span>
+      <div>
+        <h1>Kitchen Flex</h1>
+        <p class="tagline">Plate every dish with Flexbox</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-label">Level</span>
+        <span class="stat-value" id="level-indicator">1 of 8</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Score</span>
+        <span class="stat-value" id="score-indicator">0</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="level-strip" id="level-strip" aria-label="Level selection"></nav>
+
+  <main class="game-area">
+    <section class="instruction-panel">
+      <p class="instruction-label">Chef's order</p>
+      <p class="instruction" id="instruction"></p>
+    </section>
+
+    <div class="tray-viewport" id="tray-viewport">
+      <div class="tray-wrap" id="tray-wrap">
+        <div class="tray" id="tray"></div>
+        <div class="confetti-layer" id="confetti-layer"></div>
+      </div>
+    </div>
+
+    <p class="feedback" id="feedback" role="status" aria-live="polite">&nbsp;</p>
+
+    <section class="controls" aria-label="Flexbox controls">
+      <div class="control">
+        <label for="ctrl-direction">flex-direction</label>
+        <select id="ctrl-direction">
+          <option value="row">row</option>
+          <option value="row-reverse">row-reverse</option>
+          <option value="column">column</option>
+          <option value="column-reverse">column-reverse</option>
+        </select>
+      </div>
+      <div class="control">
+        <label for="ctrl-wrap">flex-wrap</label>
+        <select id="ctrl-wrap">
+          <option value="nowrap">nowrap</option>
+          <option value="wrap">wrap</option>
+          <option value="wrap-reverse">wrap-reverse</option>
+        </select>
+      </div>
+      <div class="control">
+        <label for="ctrl-justify">justify-content</label>
+        <select id="ctrl-justify">
+          <option value="flex-start">flex-start</option>
+          <option value="flex-end">flex-end</option>
+          <option value="center">center</option>
+          <option value="space-between">space-between</option>
+          <option value="space-around">space-around</option>
+          <option value="space-evenly">space-evenly</option>
+        </select>
+      </div>
+      <div class="control">
+        <label for="ctrl-align">align-items</label>
+        <select id="ctrl-align">
+          <option value="flex-start">flex-start</option>
+          <option value="flex-end">flex-end</option>
+          <option value="center">center</option>
+          <option value="stretch">stretch</option>
+          <option value="baseline">baseline</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button type="button" id="btn-check" class="btn btn-primary">Check Solution</button>
+      <button type="button" id="btn-reset" class="btn btn-ghost">Reset Level</button>
+      <button type="button" id="btn-next" class="btn btn-success" hidden>Next Level →</button>
+      <p class="attempts" id="attempts"></p>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Assignment 2 — Flexbox learning game.</p>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
